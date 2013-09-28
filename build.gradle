@@ -1,0 +1,65 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+
+group = 'org.dongchimi.eguncarlog'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.6
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'egunCarLog', 'Implementation-Version': version
+    }
+}
+
+//def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), 'Document/devApplication/gradle/repo').absolutePath
+
+repositories {
+    mavenCentral()
+	//mavenRepo artifactUrls: localMavenRepo
+}
+
+def springVersion = '3.2.4.RELEASE'
+dependencies {
+	compile group: 'org.springframework', name: 'spring-context', version: springVersion
+	compile group: 'org.springframework', name: 'spring-orm', version: springVersion
+	compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+	
+	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.6.10'
+	
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '4.2.4.Final'
+	compile group: 'org.javassist', name: 'javassist', version: '3.18.0-GA'
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+	
+	runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.26'
+	
+	testCompile group: 'org.springframework', name: 'spring-test', version: springVersion
+	//compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+	//testCompile 'junit:junit:[4,)'
+}
+
+buildDir = 'target'
+
+test {
+	testLogging {
+		events 'started', 'passed'
+	}
+    systemProperties 'property': 'value'
+}
+
+// jetty
+[jettyRunWar,jettyStop]*.stopPort = 8080
+[jettyRunWar,jettyStop]*.stopKey = 'stopKey'
+
+
+// uploadArchives
+//uploadArchives {
+//	repositories {
+//	   flatDir {
+//		   dirs 'repos'
+//	   }
+//	}
+//}
