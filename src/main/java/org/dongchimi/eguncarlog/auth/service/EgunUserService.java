@@ -11,4 +11,6 @@ public interface EgunUserService {
 	void removeEgunUser(EgunUser user);
 	// 사용자 조회
 	EgunUser getEgunUserByEmail(String emailAddress);
+	// 로그인
+	EgunUser getValidUser(EgunUser user);
 }

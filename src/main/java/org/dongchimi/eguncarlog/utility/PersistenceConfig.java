@@ -2,16 +2,15 @@ package org.dongchimi.eguncarlog.utility;
 
 import java.util.Properties;
 
-import org.springframework.core.env.Environment;
-
 //@Configuration
 //@EnableTransactionManagement
 //@PropertySource({ "classpath:persistence-mysql.properties"})
 //@ComponentScan({"org.dongchimi.eguncarlog"})
+@Deprecated
 public class PersistenceConfig {
 
 //	@Autowired
-	private Environment env;
+//	private Environment env;
 	
 //	@Bean
 //	public LocalSessionFactoryBean sessionFactory() {
@@ -48,12 +47,13 @@ public class PersistenceConfig {
 //	}
 	
 	Properties hibernateProperties() {
-		return new Properties() {
-			{
+		return new Properties();
+//		return new Properties() {
+//			{
 //				setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 //				setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
 //				setProperty("hibernate.globally_quoted_identifiers", "true");
-			}
-		};
+//			}
+//		};
 	}
 }

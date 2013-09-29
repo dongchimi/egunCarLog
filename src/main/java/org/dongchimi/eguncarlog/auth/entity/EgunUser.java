@@ -54,6 +54,20 @@ public class EgunUser implements Serializable {
 		this.password = password;
 		this.signupDate = DateU.convertDateToString(new Date(), DateU.DEFAULT_DATE_FORMAT);
 	}
+	
+	@Override
+	public String toString() {
+		return "email:" + emailAddress + " name:" + name + " password:" + password + " signupDate:" + signupDate;
+	}
+	
+	public boolean samePassword(String otherPassword) {
+		if (this.password == null) return false;
+		
+		if (this.password.equals(otherPassword)) 
+			return true;
+		else
+			return false;
+	}
 	public String getEmailAddress() {
 		return emailAddress;
 	}
