@@ -33,7 +33,7 @@ public class EgunCarRepositoryImpl implements EgunCarRepository {
 	@Override
 	public List<EgunCar> findCarsByUserEmail(String emailAddress) {
 		List<EgunCar> foundCars = (List<EgunCar>) getCurrentSession().createQuery(
-											"FROM Car as CAR WHERE CAR.userEmailAddress = :emailAddress ")
+											"FROM EgunCar as CAR WHERE CAR.userEmailAddress = :emailAddress ")
 											.setString("emailAddress", emailAddress)
 											.list();
 		return foundCars;

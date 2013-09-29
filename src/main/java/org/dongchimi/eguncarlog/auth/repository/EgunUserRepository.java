@@ -9,6 +9,7 @@ public interface EgunUserRepository {
 	void mergeEgunUser(EgunUser user);
 	// 사용자 삭제
 	void deleteEgunUser(EgunUser user);
-	// 사용자 조회
+	// 이메일로 사용자 조회
 	EgunUser getEgunUserByEmail(String emailAddress);
+	// 이름으로 사용자 조회
 }
