@@ -39,7 +39,7 @@ public class EgunUserServiceImpl implements EgunUserService {
 		if (foundUser == null) throw new EgunCarlogException("입력하신 이메일이 없습니다.");
 		
 		// 2. 비번체크
-		if (!foundUser.samePassword(user.getPassword())) throw new EgunCarlogException("입력하신 비밀번호가 다릅니다.");
+		if ( !foundUser.samePassword(user) ) throw new EgunCarlogException("입력하신 비밀번호가 다릅니다.");
 		
 		return foundUser;
 	}

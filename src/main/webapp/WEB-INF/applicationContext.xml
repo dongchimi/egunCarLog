@@ -16,6 +16,10 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
     <mvc:resources mapping="/style/**" location="/style/" />
     <mvc:resources mapping="/app/**" location="/app/" />
+    <!-- 인터셉터 -->
+    <mvc:interceptors>
+		<bean class="org.dongchimi.eguncarlog.utility.SigninIntercepter"/>
+	</mvc:interceptors>
  	
 	
 	<!-- transaction manager -->

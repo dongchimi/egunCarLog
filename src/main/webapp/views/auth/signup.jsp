@@ -2,7 +2,6 @@
 <%@ taglib prefix="layout" uri="http://kwonnam.pe.kr/jsp/template-inheritance" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    
 <layout:extends name="base">
     <layout:put block="header" type="APPEND">
         <title>회원가입</title>
@@ -16,14 +15,16 @@
                     return false;
                 }
                 
+                var emailAddress = $("#emailAddress").val();
+                var name = $("#name").val();
                 var user = {
-                    'emailAddress' : $("#emailAddress").val(),
-                    'name' : $("#name").val(),
+                    'emailAddress' : emailAddress,
+                    'name' : name,
                     'password' : password1
                 };
                 $.post('${ctx}/api/auth/signup', user, function(result) {
                         if (result.status = 'success') {
-                            EgunUtility.goPage('${ctx}/unkeep/unkeeps/month');
+                            EgunUtility.goPage('${ctx}/' + name + "/car/1/unkeeps/month");
                         }
                 });
                 
@@ -35,7 +36,7 @@
     <layout:put block="body">
         <body>
           <h1>회원가입</h1>
-          <form id="signup-form" role="form" action="${ctx}/list/signup" method="post">
+          <form id="signup-form" role="form" method="post">
             <div class="form-group">
               <label for="emailAddress">이메일</label>
               <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="example@egun.org" />

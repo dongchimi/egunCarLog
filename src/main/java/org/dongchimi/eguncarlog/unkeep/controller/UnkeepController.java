@@ -1,5 +1,7 @@
 package org.dongchimi.eguncarlog.unkeep.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.dongchimi.eguncarlog.auth.entity.EgunUser;
 import org.dongchimi.eguncarlog.unkeep.service.UnkeepService;
 import org.dongchimi.eguncarlog.utility.EgunCarlogException;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("signinUser")
-@RequestMapping(value="/unkeep")
+@RequestMapping(value="/{signinUser.name}/car/{carIndex}")
 public class UnkeepController {
 	
     private static final Logger logger = LoggerFactory.getLogger( UnkeepController.class.getSimpleName() );
@@ -25,7 +27,7 @@ public class UnkeepController {
     private UnkeepService unkeepService;
  
     @RequestMapping(value="/unkeeps/{viewName}", method=RequestMethod.GET)
-    public String findUnkeepsByMonth(@PathVariable String viewName, @ModelAttribute EgunUser signinUser) {
+    public String findUnkeepsByMonth(@ModelAttribute EgunUser signinUser, @PathVariable String viewName, HttpSession session) {
     	
     	UnkeepsViewType viewType = UnkeepsViewType.getType(viewName);
     	if (viewType == null) throw new EgunCarlogException("잘못된 URL로 접근하였습니다. unkeeps의 타입 오류입니다. ");

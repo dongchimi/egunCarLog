@@ -57,13 +57,13 @@ public class EgunUser implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "email:" + emailAddress + " name:" + name + " password:" + password + " signupDate:" + signupDate;
+		return "objectId : " + objectId + ", email:" + emailAddress + ", name:" + name + ", password:" + password + ", signupDate:" + signupDate;
 	}
 	
-	public boolean samePassword(String otherPassword) {
+	public boolean samePassword(EgunUser other) {
 		if (this.password == null) return false;
 		
-		if (this.password.equals(otherPassword)) 
+		if (this.password.equals(other.getPassword() )) 
 			return true;
 		else
 			return false;

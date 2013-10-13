@@ -5,18 +5,49 @@
 <layout:extends name="base">
   <layout:put block="header" type="APPEND">
     <title>이건 차계부</title>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#signin-form").on("submit", function() {
+          var emailAddress = $.trim($("#emailAddress").val());
+          var password = $.trim($("#password").val());
+          
+          if (emailAddress.length < 1) {
+            alert("이메일 또는 이름을 입력하세요.");
+            return $("#emailAddress").focus();s
+          }
+          if (password.length < 1) {
+            alert("비밀번호를 입력하세요.");
+            return $("#password").focus();
+          }
+          
+          var user = {
+            'emailAddress' : emailAddress,
+            'password' : password
+          };
+          
+          $.post('${ctx}/api/auth/signin', user, function(result) {
+              if (result.status = 'success') {
+                var signinUserName = EgunUtility.getResponseSingleData(result).user.name;
+                EgunUtility.goPage('${ctx}/' + signinUserName + "/car/1/unkeeps/month");
+              }
+          });
+            
+          return false;
+        });
+    });
+    </script>
   </layout:put>
   <layout:put block="body">
     <body>
     <h1>먼저, 로그인하세요.</h1>
-    <form role="form" action="${ctx}/auth/signin" method="post">
+    <form role="form" method="post" id="signin-form">
       <div class="form-group" >
         <label for="nameOrEmail">이메일</label>
-        <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="이메일을 입력하세요.">
+        <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="이메일 또는 이름을 입력하세요.">
       </div>
       <div class="form-group">
         <label for="egunUserPassword">비밀번호</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력해주세요.">
+        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
       </div>
       <div class="checkbox">
         <label><input type="checkbox">Remember me</label>
