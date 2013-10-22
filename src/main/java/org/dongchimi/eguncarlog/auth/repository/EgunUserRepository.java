@@ -12,4 +12,5 @@ public interface EgunUserRepository {
 	// 이메일로 사용자 조회
 	EgunUser getEgunUserByEmail(String emailAddress);
 	// 이름으로 사용자 조회
+	EgunUser getEgunUserByName(String name);
 }

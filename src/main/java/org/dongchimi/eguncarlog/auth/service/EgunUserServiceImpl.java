@@ -33,13 +33,18 @@ public class EgunUserServiceImpl implements EgunUserService {
 	}
 
 	@Override
-	public EgunUser getValidUser(EgunUser user) {
+	public EgunUser getValidUser(String emailOrName, String password) {
 		// 1. 아이디 체크
-		EgunUser foundUser = egunUserRepository.getEgunUserByEmail(user.getEmailAddress());
-		if (foundUser == null) throw new EgunCarlogException("입력하신 이메일이 없습니다.");
+		EgunUser foundUser = egunUserRepository.getEgunUserByEmail(emailOrName);
+		if (foundUser == null) {
+			foundUser = egunUserRepository.getEgunUserByName(emailOrName);
+			if (foundUser == null) {
+				throw new EgunCarlogException("입력하신 이메일 또는 이름이 없습니다.");
+			}
+		}
 		
 		// 2. 비번체크
-		if ( !foundUser.samePassword(user) ) throw new EgunCarlogException("입력하신 비밀번호가 다릅니다.");
+		if ( !foundUser.samePassword(password) ) throw new EgunCarlogException("입력하신 비밀번호가 다릅니다.");
 		
 		return foundUser;
 	}

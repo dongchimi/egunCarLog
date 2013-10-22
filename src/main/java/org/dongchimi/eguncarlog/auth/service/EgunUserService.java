@@ -12,5 +12,5 @@ public interface EgunUserService {
 	// 사용자 조회
 	EgunUser getEgunUserByEmail(String emailAddress);
 	// 로그인
-	EgunUser getValidUser(EgunUser user);
+	EgunUser getValidUser(String emailOrName, String password) ;
 }

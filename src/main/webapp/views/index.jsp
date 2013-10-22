@@ -38,7 +38,8 @@
     </script>
   </layout:put>
   <layout:put block="body">
-    <body>
+<div class="jumbotron">
+  <div class="container">
     <h1>먼저, 로그인하세요.</h1>
     <form role="form" method="post" id="signin-form">
       <div class="form-group" >
@@ -55,6 +56,10 @@
       <button type="submit" class="btn btn-lg btn-primary">로그인</button>
       <a href="${ctx}/auth/signup" class="btn btn-default btn-lg">회원가입</a>
     </form>
-    </body>
+  </div>
+</div>
+
+    
+    
   </layout:put>
 </layout:extends>

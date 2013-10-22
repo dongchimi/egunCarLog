@@ -37,9 +37,8 @@ public class EgunAuthResource {
 	public JSonResponse signup(@ModelAttribute EgunUser signinUser, Model model, BindingResult result, SessionStatus status) {
 		// 현재 날짜 셋팅
 		signinUser.setSignupDate(DateU.getCurrentDateString());
-		
+
 		egunUserService.createEgunUser(signinUser);
-		
 		model.addAttribute("signinUser", signinUser);
 		
 		return RequestResponseBuilder.getSuccessResponse("user", signinUser);
@@ -48,12 +47,8 @@ public class EgunAuthResource {
 	@RequestMapping(value="/signin", method=RequestMethod.POST)
 	@ResponseBody
 	public JSonResponse signin(@ModelAttribute("user") EgunUser inputUser, Model model) {
-    	
-    	logger.info(inputUser.toString());
-    	
     	// 로그인 체크
-    	EgunUser validUser = egunUserService.getValidUser(inputUser);
-    	logger.info("validUser : " + validUser.toString());
+    	EgunUser validUser = egunUserService.getValidUser(inputUser.getEmailAddress(), inputUser.getPassword());
     	model.addAttribute("signinUser", validUser);
     	
     	return RequestResponseBuilder.getSuccessResponse("user", validUser);

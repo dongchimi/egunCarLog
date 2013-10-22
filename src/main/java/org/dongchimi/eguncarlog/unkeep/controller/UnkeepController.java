@@ -1,7 +1,5 @@
 package org.dongchimi.eguncarlog.unkeep.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.dongchimi.eguncarlog.auth.entity.EgunUser;
 import org.dongchimi.eguncarlog.unkeep.service.UnkeepService;
 import org.dongchimi.eguncarlog.utility.EgunCarlogException;
@@ -27,7 +25,7 @@ public class UnkeepController {
     private UnkeepService unkeepService;
  
     @RequestMapping(value="/unkeeps/{viewName}", method=RequestMethod.GET)
-    public String findUnkeepsByMonth(@ModelAttribute EgunUser signinUser, @PathVariable String viewName, HttpSession session) {
+    public String findUnkeepsByMonth(@ModelAttribute EgunUser signinUser, @PathVariable String viewName) {
     	
     	UnkeepsViewType viewType = UnkeepsViewType.getType(viewName);
     	if (viewType == null) throw new EgunCarlogException("잘못된 URL로 접근하였습니다. unkeeps의 타입 오류입니다. ");
@@ -45,5 +43,10 @@ public class UnkeepController {
     			break;
     	}
     	return nextView;
+    }
+    
+    @RequestMapping(value="/unkeeps/new", method=RequestMethod.GET)
+    public String newForm() {
+    	return "/unkeep/newUnkeep";
     }
 }
