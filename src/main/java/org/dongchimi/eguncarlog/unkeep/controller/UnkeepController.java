@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("signinUser")
-@RequestMapping(value="/{signinUser.name}/car/{carIndex}")
+@RequestMapping(value="/{signinUserName}/car/{carIndex}/unkeeps")
 public class UnkeepController {
 	
     private static final Logger logger = LoggerFactory.getLogger( UnkeepController.class.getSimpleName() );
@@ -24,7 +24,7 @@ public class UnkeepController {
     @Autowired
     private UnkeepService unkeepService;
  
-    @RequestMapping(value="/unkeeps/{viewName}", method=RequestMethod.GET)
+    @RequestMapping(value="/{viewName}", method=RequestMethod.GET)
     public String findUnkeepsByMonth(@ModelAttribute EgunUser signinUser, @PathVariable String viewName) {
     	
     	UnkeepsViewType viewType = UnkeepsViewType.getType(viewName);
@@ -45,7 +45,7 @@ public class UnkeepController {
     	return nextView;
     }
     
-    @RequestMapping(value="/unkeeps/new", method=RequestMethod.GET)
+    @RequestMapping(value="/new", method=RequestMethod.GET)
     public String newForm() {
     	return "/unkeep/newUnkeep";
     }

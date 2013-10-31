@@ -63,6 +63,11 @@ public class EgunCar implements Serializable {
 	@Column(name="MEMO")
 	private String memo;
 	
+	@Override
+	public String toString() {
+		return "objectId : " + this.objectId;
+	}
+	
 	public String getAlias() {
 		return alias;
 	}

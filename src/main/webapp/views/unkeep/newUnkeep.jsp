@@ -7,29 +7,7 @@
         <title>새로작성</title>
         <script type="text/javascript">
         $(document).ready(function() {
-            $("#signup-form").on("submit", function() {
-                var password1 = $("#password").val();
-                var password2 = $("#egunUserPassword2").val();
-                if (password1 != password2) {
-                    $("#error-message").text("입력한 비밀번호가 다릅니다.").show().fadeOut(2000);
-                    return false;
-                }
-                
-                var emailAddress = $("#emailAddress").val();
-                var name = $("#name").val();
-                var user = {
-                    'emailAddress' : emailAddress,
-                    'name' : name,
-                    'password' : password1
-                };
-                $.post('${ctx}/api/auth/signup', user, function(result) {
-                        if (result.status = 'success') {
-                            EgunUtility.goPage('${ctx}/' + name + "/car/1/unkeeps/month");
-                        }
-                });
-                
-                return false;
-            });
+            
         });
         </script>
     </layout:put>

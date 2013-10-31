@@ -14,8 +14,8 @@ public class EgunCarServiceImpl implements EgunCarService {
 	EgunCarRepository egunCarRepository;
 	
 	@Override
-	public void createCar(EgunCar car) {
-		egunCarRepository.persistCar(car);
+	public long createCar(EgunCar car) {
+		return egunCarRepository.persistCar(car);
 	}
 
 	@Override

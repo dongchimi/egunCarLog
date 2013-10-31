@@ -6,7 +6,7 @@ import org.dongchimi.eguncarlog.car.entity.EgunCar;
 
 public interface EgunCarService {
 	// 자동차 등록
-	void createCar(EgunCar car);
+	long createCar(EgunCar car);
 	// 자동차 수정
 	void modifyCar(EgunCar car);
 	// 자동차 삭제

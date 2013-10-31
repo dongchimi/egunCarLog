@@ -15,8 +15,9 @@ public class EgunCarRepositoryImpl implements EgunCarRepository {
 	SessionFactory sessionFactory;
 
 	@Override
-	public void persistCar(EgunCar car) {
+	public Long persistCar(EgunCar car) {
 		getCurrentSession().persist(car);
+		return car.getObjectId();
 	}
 
 	@Override

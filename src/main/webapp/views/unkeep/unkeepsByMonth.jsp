@@ -2,7 +2,7 @@
 <%@ taglib prefix="layout" uri="http://kwonnam.pe.kr/jsp/template-inheritance" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-<c:set var="signinUser" value="${session}" />
+<c:set var="signinUser" value="${signinUser}" scope="session"/>
 <layout:extends name="base">
 <layout:put block="header" type="APPEND">
   <title>회원가입</title>
@@ -11,11 +11,13 @@
       $("#newUnkeep").click(function() {
         EgunUtility.goPage('${ctx}/${signinUser.name}/car/1/unkeeps/new');
       });
+      $("#cars").click(function() {
+        EgunUtility.goPage('${ctx}/${signinUser.name}/cars/list');
+      });
     });
   </script>
 </layout:put>
 <layout:put block="body">
-  signin : ${session.signinUser} // TODO 이동규!!! 안나옴!!
   <div class="pull-left">
     <button type="button" class="btn btn-default btn-lg" id="cars">
         <span class="glyphicon glyphicon-wrench"></span> Cars
