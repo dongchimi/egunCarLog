@@ -5,6 +5,7 @@ import java.util.List;
 import org.dongchimi.eguncarlog.unkeep.entity.UnkeepItem;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,6 +36,7 @@ public class UnkeepRepositoryImpl implements UnkeepRepository {
 	public List<UnkeepItem> findUnkeepItemByCarId(Long carObjectId) {
 		List<UnkeepItem> foundUnkeepItems = getCurrentSession().createCriteria(UnkeepItem.class)
 				.add( Restrictions.eq("carObjectId", carObjectId) )
+				.addOrder( Order.desc("useDate") )
 				.list();
 		return foundUnkeepItems;
 	}

@@ -20,7 +20,6 @@
     <mvc:interceptors>
 		<bean class="org.dongchimi.eguncarlog.utility.SigninIntercepter"/>
 	</mvc:interceptors>
- 	
 	
 	<!-- transaction manager -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

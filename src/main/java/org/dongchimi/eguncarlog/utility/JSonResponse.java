@@ -1,7 +1,6 @@
 package org.dongchimi.eguncarlog.utility;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 public class JSonResponse implements Serializable{
@@ -11,8 +10,13 @@ public class JSonResponse implements Serializable{
 	
 	
 	private String status;
-	private List<Map<String,Object>> data;
+	private Map<String,Object> data;
 	private String message;
+	private String failStackMessage;
+	
+	public JSonResponse(String status) {
+		this.status = status;
+	}
 	
 	public String getStatus() {
 		return status;
@@ -26,10 +30,20 @@ public class JSonResponse implements Serializable{
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public List<Map<String, Object>> getData() {
+	public Map<String, Object> getData() {
 		return data;
 	}
-	public void setData(List<Map<String, Object>> data) {
+	public void setData(Map<String, Object> data) {
 		this.data = data;
 	}
+	public String getFailStackMessage() {
+		return failStackMessage;
+	}
+	public void setFailStackMessage(String failStackMessage) {
+		this.failStackMessage = failStackMessage;
+	}
+	public void addFailStackMessage(String message) {
+		failStackMessage = failStackMessage + "\n" + message;
+	}
+
 }

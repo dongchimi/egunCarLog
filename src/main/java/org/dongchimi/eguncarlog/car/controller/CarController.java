@@ -22,7 +22,6 @@ public class CarController {
     	return "";
     }
     
-    
     @RequestMapping(value="/new", method=RequestMethod.GET)
     public String newForm() {
     	return "/car/newCar";

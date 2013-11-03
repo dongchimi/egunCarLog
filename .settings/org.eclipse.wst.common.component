@@ -5,100 +5,106 @@
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
 		<wb-resource deploy-path="/" source-path="src/main/webapp"/>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.hibernate.common/hibernate-commons-annotations/4.0.2.Final/jar/94edcc5572efb02e123cc9ef7ad7d0fa5f76cf/hibernate-commons-annotations-4.0.2.Final.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/commons-logging/commons-logging/1.1.1/jar/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.aspectj/aspectjweaver/1.6.10/jar/d5e68c96e39ac9a31328bce0e77f2cbe674d4f55/aspectjweaver-1.6.10.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-web/3.2.4.RELEASE/jar/8daf0bd1172cb253d93611adadfa0462935d760d/spring-web-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-orm/3.2.4.RELEASE/jar/acaf0ce231bbb0de687d3ba6a9a495167b9cea98/spring-orm-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec/1.0.1.Final/jar/18f0e1d42f010a8b53aa447bf274a706d5148852/jboss-transaction-api_1.1_spec-1.0.1.Final.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/javax.servlet/servlet-api/2.5/jar/5959582d97d8b61f4d154ca9e495aafd16726e34/servlet-api-2.5.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jar/3306a165afa81938fc3d8a0948e891de9f6b192b/hibernate-jpa-2.0-api-1.0.1.Final.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/ch.qos.logback/logback-core/1.0.13/jar/dc6e6ce937347bd4d990fc89f4ceb469db53e45e/logback-core-1.0.13.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-webmvc/3.2.4.RELEASE/jar/99c0303b36c421b3c43dfc2ae55e46fc81dbaefc/spring-webmvc-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.javassist/javassist/3.18.0-GA/bundle/fbdd54ef493836f3ce32031cfe86d6ca8f15539f/javassist-3.18.0-GA.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-expression/3.2.4.RELEASE/jar/edde2efe828f5890f57aa153f55c5c994cf04489/spring-expression-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/kr.pe.kwonnam.jsp/jsp-inheritance/0.2/jar/1b4165a36003c8162d77efddf51723fbf555b9ec/jsp-inheritance-0.2.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-tx/3.2.4.RELEASE/jar/6da00a9bc5ee808211dafc2f642129476a0d63cb/spring-tx-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-expression/3.2.4.RELEASE/jar/edde2efe828f5890f57aa153f55c5c994cf04489/spring-expression-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-core/3.2.4.RELEASE/jar/d36bed1dbca3f725bb5a4405c6115adc8c99d1a9/spring-core-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-context/3.2.4.RELEASE/jar/4e6d5edcaeeed6cb332b90fbe3713f003d28188c/spring-context-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.slf4j/slf4j-api/1.7.5/jar/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/dom4j/dom4j/1.6.1/jar/5d3ccc056b6f056dbf0dddfdf43894b9065a8f94/dom4j-1.6.1.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.hibernate/hibernate-core/4.2.4.Final/jar/2aea736f6d92e4b2aba6a2f024f099388f6dfe9f/hibernate-core-4.2.4.Final.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/javax.servlet/jstl/1.1.2/jar/3375e43c620df4f1114959400ff9bb90d12a2feb/jstl-1.1.2.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.codehaus.jackson/jackson-core-asl/1.9.12/jar/ecfc6f73a841c4c3c653b59651a3f9d5f1286469/jackson-core-asl-1.9.12.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.slf4j/jcl-over-slf4j/1.7.5/jar/cd5970bd13fa85f7bed41ca606d6daf7cbf1365/jcl-over-slf4j-1.7.5.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-beans/3.2.4.RELEASE/jar/47b156296a5e9875faa7421b6e25b419a530f52d/spring-beans-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/antlr/antlr/2.7.7/jar/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.hibernate.common/hibernate-commons-annotations/4.0.2.Final/jar/94edcc5572efb02e123cc9ef7ad7d0fa5f76cf/hibernate-commons-annotations-4.0.2.Final.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.slf4j/slf4j-api/1.7.5/jar/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-aop/3.2.4.RELEASE/jar/773389e56c871ab558b87629b3e7c73fc4bf0ec/spring-aop-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.hibernate/hibernate-core/4.2.4.Final/jar/2aea736f6d92e4b2aba6a2f024f099388f6dfe9f/hibernate-core-4.2.4.Final.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.jboss.logging/jboss-logging/3.1.0.GA/jar/c71f2856e7b60efe485db39b37a31811e6c84365/jboss-logging-3.1.0.GA.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jar/3306a165afa81938fc3d8a0948e891de9f6b192b/hibernate-jpa-2.0-api-1.0.1.Final.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/ch.qos.logback/logback-classic/1.0.13/jar/6b56ec752b42ccfa1415c0361fb54b1ed7ca3db6/logback-classic-1.0.13.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-tx/3.2.4.RELEASE/jar/6da00a9bc5ee808211dafc2f642129476a0d63cb/spring-tx-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.aspectj/aspectjweaver/1.6.10/jar/d5e68c96e39ac9a31328bce0e77f2cbe674d4f55/aspectjweaver-1.6.10.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/mysql/mysql-connector-java/5.1.26/jar/f1697bef3639811e56173e70eb2471562e3ac8ef/mysql-connector-java-5.1.26.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.javassist/javassist/3.18.0-GA/bundle/fbdd54ef493836f3ce32031cfe86d6ca8f15539f/javassist-3.18.0-GA.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-core/3.2.4.RELEASE/jar/d36bed1dbca3f725bb5a4405c6115adc8c99d1a9/spring-core-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/javax.servlet/jstl/1.1.2/jar/3375e43c620df4f1114959400ff9bb90d12a2feb/jstl-1.1.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-beans/3.2.4.RELEASE/jar/47b156296a5e9875faa7421b6e25b419a530f52d/spring-beans-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/aopalliance/aopalliance/1.0/jar/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/aopalliance/aopalliance/1.0/jar/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/dom4j/dom4j/1.6.1/jar/5d3ccc056b6f056dbf0dddfdf43894b9065a8f94/dom4j-1.6.1.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-webmvc/3.2.4.RELEASE/jar/99c0303b36c421b3c43dfc2ae55e46fc81dbaefc/spring-webmvc-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/antlr/antlr/2.7.7/jar/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/commons-pool/commons-pool/1.5.4/jar/75b6e20c596ed2945a259cea26d7fadd298398e6/commons-pool-1.5.4.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-jdbc/3.2.4.RELEASE/jar/b0102696b834ebd75292137c0d9348da42c6bf96/spring-jdbc-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/taglibs/standard/1.1.2/jar/a17e8a4d9a1f7fcc5eed606721c9ed6b7f18acf7/standard-1.1.2.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.codehaus.jackson/jackson-mapper-asl/1.9.12/jar/8b290aae44213e2f6da00c07af59b0d442068f4d/jackson-mapper-asl-1.9.12.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/commons-logging/commons-logging/1.1.1/jar/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-orm/3.2.4.RELEASE/jar/acaf0ce231bbb0de687d3ba6a9a495167b9cea98/spring-orm-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-web/3.2.4.RELEASE/jar/8daf0bd1172cb253d93611adadfa0462935d760d/spring-web-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/javax.servlet/servlet-api/2.5/jar/5959582d97d8b61f4d154ca9e495aafd16726e34/servlet-api-2.5.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-aop/3.2.4.RELEASE/jar/773389e56c871ab558b87629b3e7c73fc4bf0ec/spring-aop-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/mysql/mysql-connector-java/5.1.26/jar/f1697bef3639811e56173e70eb2471562e3ac8ef/mysql-connector-java-5.1.26.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.springframework/spring-jdbc/3.2.4.RELEASE/jar/b0102696b834ebd75292137c0d9348da42c6bf96/spring-jdbc-3.2.4.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/commons-pool/commons-pool/1.5.4/jar/75b6e20c596ed2945a259cea26d7fadd298398e6/commons-pool-1.5.4.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/commons-dbcp/commons-dbcp/1.4/jar/30be73c965cc990b153a100aaaaafcf239f82d39/commons-dbcp-1.4.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/ch.qos.logback/logback-core/1.0.13/jar/dc6e6ce937347bd4d990fc89f4ceb469db53e45e/logback-core-1.0.13.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/ch.qos.logback/logback-classic/1.0.13/jar/6b56ec752b42ccfa1415c0361fb54b1ed7ca3db6/logback-classic-1.0.13.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/taglibs/standard/1.1.2/jar/a17e8a4d9a1f7fcc5eed606721c9ed6b7f18acf7/standard-1.1.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.jboss.logging/jboss-logging/3.1.0.GA/jar/c71f2856e7b60efe485db39b37a31811e6c84365/jboss-logging-3.1.0.GA.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.springframework/spring-context/3.2.4.RELEASE/jar/4e6d5edcaeeed6cb332b90fbe3713f003d28188c/spring-context-3.2.4.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/.gradle/caches/artifacts-23/filestore/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec/1.0.1.Final/jar/18f0e1d42f010a8b53aa447bf274a706d5148852/jboss-transaction-api_1.1_spec-1.0.1.Final.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/kr.pe.kwonnam.jsp/jsp-inheritance/0.2/jar/1b4165a36003c8162d77efddf51723fbf555b9ec/jsp-inheritance-0.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/org.slf4j/jcl-over-slf4j/1.7.5/jar/cd5970bd13fa85f7bed41ca606d6daf7cbf1365/jcl-over-slf4j-1.7.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/dongchimi/Documents/devApplication/gradle-1.7/caches/artifacts-23/filestore/commons-dbcp/commons-dbcp/1.4/jar/30be73c965cc990b153a100aaaaafcf239f82d39/commons-dbcp-1.4.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 	</wb-module>

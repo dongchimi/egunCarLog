@@ -70,7 +70,8 @@ test {
 }
 
 // jetty, jettyRunWar
-[jettyRunWar,jettyStop]*.stopPort = 8080
+[jettyRunWar,jettyStop]*.httpPort = 9006
+[jettyRunWar,jettyStop]*.stopPort = 9006
 [jettyRunWar,jettyStop]*.stopKey = 'stopKey'
 
 // jsp 

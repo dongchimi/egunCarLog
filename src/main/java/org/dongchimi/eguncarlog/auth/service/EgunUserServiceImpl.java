@@ -14,7 +14,11 @@ public class EgunUserServiceImpl implements EgunUserService {
 
 	@Override
 	public void createEgunUser(EgunUser user) {
-		egunUserRepository.persistEgunUser(user);
+		EgunUser foundUser = egunUserRepository.getEgunUserByEmail(user.getEmailAddress());
+		if (foundUser != null) {
+			throw new EgunCarlogException("이미 등록된 이메일입니다.");			
+		}
+		egunUserRepository.persistEgunUser(user);			
 	}
 
 	@Override

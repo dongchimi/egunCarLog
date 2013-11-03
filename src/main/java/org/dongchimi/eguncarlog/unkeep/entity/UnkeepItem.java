@@ -47,6 +47,12 @@ public class UnkeepItem implements Serializable {
 	
 	@Embedded
 	private GasUnkeep gas;
+	
+	@Embedded
+	private RepairUnkeep repair;
+	
+	@Embedded
+	private ExpendableUnkeep expendable;
 
 	public String getItemName() {
 		return itemName;
@@ -102,5 +108,21 @@ public class UnkeepItem implements Serializable {
 
 	public void setCarObjectId(Long carObjectId) {
 		this.carObjectId = carObjectId;
+	}
+
+	public RepairUnkeep getRepair() {
+		return repair;
+	}
+
+	public void setRepair(RepairUnkeep repair) {
+		this.repair = repair;
+	}
+
+	public ExpendableUnkeep getExpendable() {
+		return expendable;
+	}
+
+	public void setExpendable(ExpendableUnkeep expendable) {
+		this.expendable = expendable;
 	}
 }

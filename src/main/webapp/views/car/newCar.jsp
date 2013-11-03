@@ -20,11 +20,8 @@
                 vin : $("#vin").val(),
                 memo : $("#memo").val()
               };
-              $.post('${ctx}/api/car/new', egunCar, function(result) {
-                      if (result.status = 'success') {
-                          //alert('성공');
-                          EgunUtility.goPage('${ctx}/${signinUser.name}/cars/list');
-                      }
+              EgunUtility.doPost('${ctx}/api/car/new', egunCar, function() {
+                EgunUtility.goPage('${ctx}/${signinUser.name}/cars/list');
               });
               return false;
             });

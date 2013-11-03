@@ -24,12 +24,9 @@
             'emailAddress' : emailAddress,
             'password' : password
           };
-          
-          $.post('${ctx}/api/auth/signin', user, function(result) {
-              if (result.status = 'success') {
-                var signinUserName = EgunUtility.getResponseSingleData(result).user.name;
-                EgunUtility.goPage('${ctx}/' + signinUserName + "/car/1/unkeeps/month");
-              }
+          EgunUtility.doPost ('${ctx}/api/auth/signin', user, function(responseData) {
+            var signinUserName = responseData.user.name;
+            EgunUtility.goPage('${ctx}/' + signinUserName + "/car/1/unkeeps/month");
           });
             
           return false;

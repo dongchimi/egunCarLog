@@ -13,4 +13,6 @@
     </root>
 
     <logger name="org.dongchimi.eguncarlog" level="DEBUG" />
+    <logger name="org.hibernate.SQL" level = "DEBUG" />
+    <logger name="org.hibernate.type" level = "trace" />
 </configuration>

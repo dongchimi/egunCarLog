@@ -22,10 +22,8 @@
                     'name' : name,
                     'password' : password1
                 };
-                $.post('${ctx}/api/auth/signup', user, function(result) {
-                        if (result.status = 'success') {
-                            EgunUtility.goPage('${ctx}/' + name + "/car/1/unkeeps/month");
-                        }
+                EgunUtility.doPost('${ctx}/api/auth/signup', user, function(result) {
+                  EgunUtility.goPage('${ctx}/' + name + "/car/1/unkeeps/month");
                 });
                 
                 return false;

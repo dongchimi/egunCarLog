@@ -16,26 +16,48 @@
     });
     
     var loadCars = function() {
-      $.get('${ctx}/api/car/list', '', function(result) {
-        if (result.status = 'success') {
-            console.log(result);
-          for(var idx = 0; idx < result.data.length; idx++) {
-            var car = result.data[idx];
-            var tr = '<tr>'
-                  + '<td>' + idx + '</td>'
-                  + '<td>' + car.alias + '</td>'
-                  + '<td>' + car.automaker + '</td>'
-                  + '<td>' + car.modelName + '</td>'
-                  + '<td>' + car.makeYear + '</td>'
-                  + '<td>' + car.buyDate + '</td>'
-                  + '<td>' + car.carNumber + '</td>'
-                  + '<td>' + car.vin + '</td>'
-                  + '<td>' + car.memo + '</td>'
-                  + '</tr>';
-            $('#cars').append(tr);
+      EgunUtility.doGet('${ctx}/api/car/list', '', function(responseData) {
+        var cars = responseData.cars;
+        if (cars.length < 1) return;
+        
+        var currentCarId = '${signinUser.currentCarId}';
+        var $carTr = $('#cars');
+        for(var idx = 0; idx < cars.length; idx++) {
+          var car = cars[idx];
+          var rowIndex = idx + 1;
+          
+          var selectedClassName = '';
+          if (currentCarId == car.objectId) {
+            selectedClassName = 'class="active"';
           }
+          
+          var tr = '<tr data-carid = ' + car.objectId + ' ' + selectedClassName+'>'
+                + '<td>' + rowIndex + '</td>'
+                + '<td>' + car.alias + '</td>'
+                + '<td>' + car.automaker + '</td>'
+                + '<td>' + car.modelName + '</td>'
+                + '<td>' + car.makeYear + '</td>'
+                + '<td>' + car.buyDate + '</td>'
+                + '<td>' + car.carNumber + '</td>'
+                + '<td>' + car.vin + '</td>'
+                + '<td>' + car.memo + '</td>'
+                + '<td><div class="btn-group"><button type="button" class="btn btn-default">수정</button><button type="button" class="btn btn-default">삭제</button></div>'
+                + '</tr>';  
+          $carTr.append(tr);
         }
+        
+        // 차 선택시 호출
+        $("#cars tr").on('click', function(event) {
+          var carObjectId = $(event.currentTarget).data('carid');
+          selectCar(carObjectId);
+        });
       });
+      
+      var selectCar = function(carId) {
+        EgunUtility.doPost('${ctx}/api/car/selectcar/' + carId, '', function() {
+          EgunUtility.goPage('${ctx}/${signinUser.name}/car/' + carId + '/unkeeps/month');
+        });
+      };
     };
   </script>
 </layout:put>
@@ -45,10 +67,10 @@
       <span class="glyphicon glyphicon-edit"></span> New
     </button>  
   </div>
-  <table class="table">
+  <table class="table table-hover">
       <thead>
           <tr>
-              <th>번호</th>
+              <th>선택</th>
               <th>별칭</th>
               <th>제조사</th>
               <th>모델</th>
@@ -57,9 +79,10 @@
               <th>자동차번호</th>
               <th>차대번호</th>
               <th>메모</th>
+              <th></th>
           </tr>
       </thead>
-      <tbody id = 'cars' />
+      <tbody id='cars' />
   </table>
 </layout:put>
 </layout:extends>

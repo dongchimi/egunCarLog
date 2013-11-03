@@ -2,17 +2,49 @@
 
 var EgunUtility = {};
 
+EgunUtility.doPost = function (url, paramObj, callback) {
+  $.post(url, paramObj, function (response) {
+    if (EgunUtility.isSuccessResponse(response)) {
+      if (EgunUtility.hasResponseData(response)) {
+        callback(response.data);
+      }
+      else {
+        if (callback != undefined && callback != null) {
+          callback();
+        }
+      }
+    }
+    return EgunUtility.showfailMessage(response);
+  });
+};
+         
+EgunUtility.doGet = function (url, paramObj, callback) {
+  $.get(url, paramObj, function (response) {
+    if (EgunUtility.isSuccessResponse(response)) {
+      if (EgunUtility.hasResponseData(response)) {
+        callback(response.data);
+      }
+    }
+    return EgunUtility.showfailMessage(response);
+  });
+};
+         
 EgunUtility.isSuccessResponse = function (response) {
     return response.status === "success";
 };
 
-EgunUtility.getResponseSingleData = function (response) {
-    return response.data[0];
-};
-
+EgunUtility.hasResponseData = function(response) {
+    return response.data != undefined && response.data != null;
+}
 EgunUtility.goPage = function (nextPageUrl) {
     document.location.href = nextPageUrl;
 };
+
+EgunUtility.showfailMessage = function(response) {
+  if (response.status != "fail") return;
+  
+  alert(response.message);
+}
 
 //var EgunCar = {
 //  var objectId = '';

@@ -14,7 +14,30 @@
       $("#cars").click(function() {
         EgunUtility.goPage('${ctx}/${signinUser.name}/cars/list');
       });
+      
+      loadUnkeeps();
     });
+    
+    var loadUnkeeps = function() {
+      EgunUtility.doGet('${ctx}/api/unkeep/list', '', function(responseData) {
+        var unkeepItems = responseData.unkeepItems;
+        if (unkeepItems.length < 1) return;
+        
+        var $unkeepItemsTr = $('#unkeepItems');
+        for(var idx = 0; idx < unkeepItems.length; idx++) {
+          var unkeepItem = unkeepItems[idx];
+          var rowIndex = idx + 1;
+          
+          var tr = '<tr>'
+                + '<td>' + rowIndex + '</td>'
+                + '<td>' + unkeepItem.useDate + '</td>'
+                + '<td>' + unkeepItem.itemName + '</td>'
+                + '<td>' + unkeepItem.unkeepPrice + '</td>'
+                + '</tr>';
+          $unkeepItemsTr.append(tr);
+        }
+      });
+    };
   </script>
 </layout:put>
 <layout:put block="body">
@@ -37,14 +60,7 @@
               <th>가격</th>
           </tr>
       </thead>
-      <tbody>
-          <tr>
-              <td>1</td>
-              <td>2013.10.10</td>
-              <td>용문주유소</td>
-              <td>100000</td>
-          </tr>
-      </tbody>
+      <tbody id='unkeepItems' />
   </table>
 </layout:put>
 </layout:extends>

@@ -46,6 +46,9 @@ public class EgunUser implements Serializable {
 	@Column(name="SIGNUP_DATE")
 	private String signupDate;
 	
+	@Column(name="CURRENT_CAR_ID")
+	private long currentCarId = -1;
+	
 	public EgunUser() {}
 	
 	public EgunUser(String userEmail, String name, String password) {
@@ -97,5 +100,11 @@ public class EgunUser implements Serializable {
 	}
 	public void setObjectId(Long objectId) {
 		this.objectId = objectId;
+	}
+	public long getCurrentCarId() {
+		return currentCarId;
+	}
+	public void setCurrentCarId(long currentCarId) {
+		this.currentCarId = currentCarId;
 	}
 }
