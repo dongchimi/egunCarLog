@@ -13,4 +13,6 @@ public interface EgunCarRepository {
 	void deleteCar(EgunCar car);
 	// 자동차 조회
 	List<EgunCar> findCarsByUserEmail(String emailAddress);
+	// 자동차 조회 
+	EgunCar getCar(long carOid);
 }

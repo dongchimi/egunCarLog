@@ -16,6 +16,7 @@
     });
     
     var loadCars = function() {
+      $("#cars tr").remove();
       EgunUtility.doGet('${ctx}/api/car/list', '', function(responseData) {
         var cars = responseData.cars;
         if (cars.length < 1) return;
@@ -41,7 +42,7 @@
                 + '<td>' + car.carNumber + '</td>'
                 + '<td>' + car.vin + '</td>'
                 + '<td>' + car.memo + '</td>'
-                + '<td><div class="btn-group"><button type="button" class="btn btn-default">수정</button><button type="button" class="btn btn-default">삭제</button></div>'
+                + '<td><div class="btn-group"><button type="button" class="btn btn-default" name="modify-car" data-carid=' + car.objectId + '>수정</button><button type="button" class="btn btn-default" name="delete-car" data-carid=' + car.objectId + '>삭제</button></div>'
                 + '</tr>';  
           $carTr.append(tr);
         }
@@ -50,6 +51,27 @@
         $("#cars tr").on('click', function(event) {
           var carObjectId = $(event.currentTarget).data('carid');
           selectCar(carObjectId);
+        });
+        
+        // 수정 요청
+        $("#cars tr [name=modify-car]").on('click', function(event) {
+          event.stopPropagation();
+          var carOid = $(event.target).data('carid');
+          EgunUtility.goPage('${ctx}/${signinUser.name}/cars/modify/' + carOid);
+        });
+        
+        // 삭제 요청
+        $("#cars tr [name=delete-car]").on('click', function(event) {
+          event.stopPropagation();
+          var carId = $(event.target).data('carid');
+          if (confirm('삭제하시겠습니까?') == true) {
+            EgunUtility.doDelete('${ctx}/api/car/delete/' + carId, '', function(response) {
+              alert('삭제를 완료하였습니다.');
+              
+              // 재조회
+              loadCars();
+            });
+          }
         });
       });
       

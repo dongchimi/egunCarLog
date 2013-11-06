@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,7 +52,14 @@ public class CarResource {
     	
     	long createCarId = egunCarService.createCar(egunCar);
     	egunCar.setObjectId(createCarId);
-    	return RequestResponseBuilder.getSuccessResponse("cars", egunCar);
+    	return RequestResponseBuilder.getSuccessResponse("car", egunCar);
+    }
+    
+    @RequestMapping(value="/modify", method=RequestMethod.POST)
+    @ResponseBody
+    public JSonResponse modifyCar(@ModelAttribute EgunCar egunCar) {
+    	egunCarService.modifyCar(egunCar);
+    	return RequestResponseBuilder.getSuccessResponse();
     }
     
     @RequestMapping(value="/selectcar/{carId}", method=RequestMethod.POST)
@@ -65,4 +73,24 @@ public class CarResource {
     	request.getSession().setAttribute("signinUser", egunUser);
     	return RequestResponseBuilder.getSuccessResponse();
     }
+    
+    @RequestMapping(value="/get/{carId}", method=RequestMethod.GET)
+    @ResponseBody
+    public JSonResponse getCar(@PathVariable String carId, HttpServletRequest request) {
+    	EgunCar egunCar = egunCarService.getCar( Long.valueOf(carId) );
+    	return RequestResponseBuilder.getSuccessResponse("car", egunCar);
+    }
+    
+    @RequestMapping(value="/delete/{carOid}", method=RequestMethod.DELETE)
+    @ResponseBody
+    public JSonResponse removeCar(@PathVariable long carOid, HttpServletRequest request) {
+    	egunCarService.removeCarById(carOid);
+    	return RequestResponseBuilder.getSuccessResponse();
+    }
+    
+	@ExceptionHandler(EgunCarlogException.class)
+	@ResponseBody	
+	public JSonResponse exceptionHandler(EgunCarlogException ex) {
+		return RequestResponseBuilder.getFailResponse(ex);
+	}
 }

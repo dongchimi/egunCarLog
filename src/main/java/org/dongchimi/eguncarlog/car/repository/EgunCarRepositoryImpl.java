@@ -40,6 +40,10 @@ public class EgunCarRepositoryImpl implements EgunCarRepository {
 		return foundCars;
 	}
 	
+	@Override
+	public EgunCar getCar(long carOid) {
+		return (EgunCar) getCurrentSession().get(EgunCar.class, carOid);
+	}
 	protected Session getCurrentSession() {
 		return sessionFactory.getCurrentSession();
 	}

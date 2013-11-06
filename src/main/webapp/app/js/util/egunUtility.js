@@ -24,8 +24,53 @@ EgunUtility.doGet = function (url, paramObj, callback) {
       if (EgunUtility.hasResponseData(response)) {
         callback(response.data);
       }
+      else {
+        if (callback != undefined && callback != null) {
+          callback();
+        }
+      }
     }
     return EgunUtility.showfailMessage(response);
+  });
+};
+
+EgunUtility.doPut = function (url, paramObj, callback) {
+  $.ajax({
+    url : url,
+    type : 'PUT',
+    success: function(response) {
+      if (EgunUtility.isSuccessResponse(response)) {
+        if (EgunUtility.hasResponseData(response)) {
+          callback(response.data);
+        }
+        else {
+          if (callback != undefined && callback != null) {
+            callback();
+          }
+        }
+      }
+      return EgunUtility.showfailMessage(response);
+    }
+  });
+};
+
+EgunUtility.doDelete = function (url, paramObj, callback) {
+  $.ajax({
+    url : url,
+    type : 'DELETE',
+    success: function(response) {
+      if (EgunUtility.isSuccessResponse(response)) {
+        if (EgunUtility.hasResponseData(response)) {
+          callback(response.data);
+        }
+        else {
+          if (callback != undefined && callback != null) {
+            callback();
+          }
+        }
+      }
+      return EgunUtility.showfailMessage(response);
+    }
   });
 };
          

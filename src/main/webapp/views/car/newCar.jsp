@@ -3,28 +3,65 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <c:set var="signinUser" value="${signinUser}" scope="session"/>
+
 <layout:extends name="base">
     <layout:put block="header" type="APPEND">
-        <title>새로작성</title>
+        <title></title>
         <script type="text/javascript">
         $(document).ready(function() {
-            $("#car-form").on("submit", function() {
-              var egunCar = {
-                userEmailAddress : '${signinUser.emailAddress}',
-                alias : $("#alias").val(),
-                modelName : $("#modelName").val(),
-                automaker : $("#automaker").val(),
-                makeYear : $("#makeYear").val(),
-                buyDate : $("#buyDate").val(),
-                carNumber : $("#carNumber").val(),
-                vin : $("#vin").val(),
-                memo : $("#memo").val()
-              };
+            
+          var carObjectId = '${carOid}';
+          // 수정 
+          if (($.trim(carObjectId)) > 0) {
+            EgunUtility.doGet('${ctx}/api/car/get/' + carObjectId, '', function (responseData) {
+              var car = responseData.car;
+              console.log(car);
+              
+              if (car != null) {
+                $("#alias").val(car.alias);
+                $("#modelName").val(car.modelName);
+                $("#automaker").val(car.automaker);
+                $("#makeYear").val(car.makeYear);
+                $("#buyDate").val(car.buyDate);
+                $("#carNumber").val(car.carNumber);
+                $("#vin").val(car.vin);
+                $("#memo").val(car.memo);
+              }
+            });
+          }
+          // 신규
+          else {
+          }
+          
+          // 저장
+          $("#car-form").on("submit", function() {
+            var egunCar = {
+              userEmailAddress : '${signinUser.emailAddress}',
+              alias : $("#alias").val(),
+              modelName : $("#modelName").val(),
+              automaker : $("#automaker").val(),
+              makeYear : $("#makeYear").val(),
+              buyDate : $("#buyDate").val(),
+              carNumber : $("#carNumber").val(),
+              vin : $("#vin").val(),
+              memo : $("#memo").val()
+            };
+            
+            if (($.trim(carObjectId)) > 0) {
+              egunCar.objectId = carObjectId;
+              EgunUtility.doPost('${ctx}/api/car/modify', egunCar, function() {
+                EgunUtility.goPage('${ctx}/${signinUser.name}/cars/list');
+              });
+            }
+            else {
               EgunUtility.doPost('${ctx}/api/car/new', egunCar, function() {
                 EgunUtility.goPage('${ctx}/${signinUser.name}/cars/list');
               });
-              return false;
-            });
+            }
+            
+            return false;
+          });
+            
         });
         </script>
     </layout:put>
