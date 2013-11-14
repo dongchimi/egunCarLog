@@ -38,6 +38,7 @@
                 + '<td>' + car.automaker + '</td>'
                 + '<td>' + car.modelName + '</td>'
                 + '<td>' + car.makeYear + '</td>'
+                + '<td>' + car.odometer + '</td>'
                 + '<td>' + car.buyDate + '</td>'
                 + '<td>' + car.carNumber + '</td>'
                 + '<td>' + car.vin + '</td>'
@@ -97,6 +98,7 @@
               <th>제조사</th>
               <th>모델</th>
               <th>제조년도</th>
+              <th>누적거리</th>
               <th>구입일</th>
               <th>자동차번호</th>
               <th>차대번호</th>

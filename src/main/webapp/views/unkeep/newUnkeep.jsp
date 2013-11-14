@@ -13,6 +13,7 @@
                 'unkeepType' : $("[name=unkeepType]:checked").val(),
                 'useDate' : $("#useDate").val(),
                 'itemName' : $("#itemName").val(),
+                'currentOdometer' : $("#currentOdometer").val(),
                 'unkeepPrice' : $("#unkeepPrice").val()
               };
               var priceOfLiter = $("#priceOfLiter").val();
@@ -46,6 +47,10 @@
               <label class="btn btn-primary"><input type="radio" name="unkeepType" id="gas" value="gas"> 주유</label>
               <label class="btn btn-primary"><input type="radio" name="unkeepType" id="repare" value="repare"> 정비</label>
               <label class="btn btn-primary"><input type="radio" name="unkeepType" id="expendable" value="expendable"> 소모품</label>
+            </div>
+            <div class="form-group">
+              <label for="password">현재까지주행거리</label>
+              <input type="text" class="form-control" id="currentOdometer" name="currentOdometer" placeholder="">
             </div>
             <div class="form-group">
               <label for="name">날짜</label>

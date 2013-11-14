@@ -63,6 +63,10 @@ public class EgunCar implements Serializable {
 	@Column(name="MEMO")
 	private String memo;
 	
+	// 醚穿利林青芭府
+	@Column(name="ODOMETER")
+	private String odometer;
+	
 	@Override
 	public String toString() {
 		return "objectId : " + this.objectId;
@@ -127,5 +131,13 @@ public class EgunCar implements Serializable {
 	}
 	public void setUserEmailAddress(String userEmailAddress) {
 		this.userEmailAddress = userEmailAddress;
+	}
+
+	public String getOdometer() {
+		return odometer;
+	}
+
+	public void setOdometer(String odometer) {
+		this.odometer = odometer;
 	}
 }

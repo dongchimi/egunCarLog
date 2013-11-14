@@ -21,6 +21,7 @@
                 $("#alias").val(car.alias);
                 $("#modelName").val(car.modelName);
                 $("#automaker").val(car.automaker);
+                $("#odometer").val(car.odometer);
                 $("#makeYear").val(car.makeYear);
                 $("#buyDate").val(car.buyDate);
                 $("#carNumber").val(car.carNumber);
@@ -39,6 +40,7 @@
               userEmailAddress : '${signinUser.emailAddress}',
               alias : $("#alias").val(),
               modelName : $("#modelName").val(),
+              odometer : $("#odometer").val(),
               automaker : $("#automaker").val(),
               makeYear : $("#makeYear").val(),
               buyDate : $("#buyDate").val(),
@@ -86,6 +88,10 @@
               <input type="text" class="form-control" id="makeYear" name="makeYear" placeholder="">
             </div>
             <div class="form-group">
+              <label for="name">누적주행거리</label>
+              <input type="text" class="form-control" id="odometer" name="odometer" placeholder="">
+            </div>
+            <div class="form-group">
               <label for="name">구입일</label>
               <input type="text" class="form-control" id="buyDate" name="buyDate" placeholder="">
             </div>
@@ -102,7 +108,7 @@
               <input type="text" class="form-control" id="memo" name="memo" placeholder="">
             </div>
             <button id="button-signup" class="btn btn-lg btn-primary">저장</button>
-            <a href="${ctx}/${signinUser.name}/cars" class="btn btn-lg btn-default">취소</a>
+            <a href="${ctx}/${signinUser.name}/cars/list" class="btn btn-lg btn-default">취소</a>
           </form>
           </body>        
     </layout:put>

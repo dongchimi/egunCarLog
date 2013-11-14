@@ -23,6 +23,7 @@ repositories {
 	//mavenRepo artifactUrls: localMavenRepo
 }
 
+//def tomcatVersion = '7.0.11'
 def springVersion = '3.2.4.RELEASE'
 dependencies {
 	compile group: 'org.springframework', name: 'spring-context', version: springVersion
@@ -82,10 +83,12 @@ repositories {
 }
 
 // uploadArchives
-//uploadArchives {
+//uploadArchives {q
 //	repositories {
 //	   flatDir {
 //		   dirs 'repos'
 //	   }
 //	}
 //}
+
+

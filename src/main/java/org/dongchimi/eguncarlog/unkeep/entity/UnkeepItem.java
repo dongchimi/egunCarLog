@@ -42,6 +42,7 @@ public class UnkeepItem implements Serializable {
 	@Column(name="UNKEEP_PRICE", nullable=false)
 	private String unkeepPrice;
 	
+	// 메모
 	@Column(name="DESCRIPTION")
 	private String description;
 	
@@ -53,6 +54,10 @@ public class UnkeepItem implements Serializable {
 	
 	@Embedded
 	private ExpendableUnkeep expendable;
+	
+	// 현재까지 자동차의 총 누적거리
+	@Column(name="CURRENT_ODOMETER")
+	private String currentOdometer;
 
 	public String getItemName() {
 		return itemName;
@@ -124,5 +129,13 @@ public class UnkeepItem implements Serializable {
 
 	public void setExpendable(ExpendableUnkeep expendable) {
 		this.expendable = expendable;
+	}
+
+	public String getCurrentOdometer() {
+		return currentOdometer;
+	}
+
+	public void setCurrentOdometer(String currentOdometer) {
+		this.currentOdometer = currentOdometer;
 	}
 }

@@ -33,6 +33,7 @@
                 + '<td>' + unkeepItem.useDate + '</td>'
                 + '<td>' + unkeepItem.itemName + '</td>'
                 + '<td>' + unkeepItem.unkeepPrice + '</td>'
+                + '<td>' + unkeepItem.currentOdometer + '</td>'
                 + '<td><div class="btn-group"><button type="button" class="btn btn-default">수정</button><button type="button" class="btn btn-default">삭제</button></div>'          
                 + '</tr>';
           $unkeepItemsTr.append(tr);
@@ -59,6 +60,7 @@
               <th>날짜</th>
               <th>내용</th>
               <th>가격</th>
+              <th>누적거리</th>
               <th></th>
           </tr>
       </thead>
